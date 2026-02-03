@@ -1,0 +1,32 @@
+---
+title: "Reproducible Document"
+author: "DanielAJ"
+format: html
+---
+
+```{r setup}
+library(tidyverse)
+```
+
+
+##Writing R code
+
+
+
+```{r}
+2+2
+```
+
+##About me
+
+-   Daniel Alexander Jørgensen
+-   Esbjerg & Grindsted Sygehus
+
+**I want to learn R**
+
+*I am learning R*
+
+##Simple Code
+```{r}
+3*3
+```
