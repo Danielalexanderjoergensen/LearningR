@@ -1,5 +1,6 @@
 TODO: Add more to the title of your project here
-Hello World
+
+Hi there!
 
 Daniel learning R
 
