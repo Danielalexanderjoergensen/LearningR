@@ -58,5 +58,12 @@ geom_histogram()
 
 See @fig-bmi-histo
 
-##Plot two continuous variables
+## Exercise: discrete plots
+```{r}
+#| fig-cap: "Glykemi"
+#| label: fig-Glykemi
+ggplot(post_meal_data, aes(x = glykemi)) +
+  geom_bar()
+```
 
+See @fig-Glykemi above for a cool plot!
