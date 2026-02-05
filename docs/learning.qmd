@@ -14,11 +14,17 @@ small_post_meal_data <- select(post_meal_data, id, Age, BMI, Group, auc_pg, auc_
 
 tidier_post_meal_data <- small_post_meal_data %>%
   rename(
-    aug_glucose = auc_pg,
-    aug_insulin = auc_ins
+    auc_glucose = auc_pg,
+    auc_insulin = auc_ins
   ) %>%
   filter(glykemi == 0) %>%
   select(-glykemi)
+
+tidier_post_meal_data <- tidier_post_meal_data %>%
+  mutate(
+    insulin_glucose_ratio = auc_insulin / auc_glucose,
+    group = if_else(Group == "CTR", "Control", "First-degree relative")
+  )
 ```
 
 
@@ -169,4 +175,18 @@ post_meal_data |>
 # Task 4.
 post_meal_data |>
   select(id, BMI, Length, Weight, Age)
+```
+
+
+## Modifying data
+
+```{r}
+tidier_post_meal_data %>%
+  mutate(insulin_glucose_ratio = auc_insulin / auc_glucose)
+
+tidier_post_meal_data %>%
+  mutate(
+    insulin_glucose_ratio = auc_insulin / auc_glucose,
+    group = if_else(Group == "CTR", "Control", "First-degree relative")
+  )
 ```
